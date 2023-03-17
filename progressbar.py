@@ -1,6 +1,5 @@
 import numpy as np
 from os import get_terminal_size
-from time import sleep
 
 
 class ProgressBar:
@@ -78,16 +77,4 @@ class ProgressBar:
 		print(text + " " + self.width * self.char + self.end_brkt + " 100% ", end="\n")
 
 
-if __name__ == "__main__":
-
-	n = 10
-	m = 100
-	p = 10000
-	pbar = ProgressBar((n,m,p), width=50, perc_float=2, 
-		text="Loading.", char="=", brackets="[]")
-	for i in range(n):
-		for j in range(m):
-			for k in range(p):
-				pbar.update(i, j, k)
-	pbar.end()
 
